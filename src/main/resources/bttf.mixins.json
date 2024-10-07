@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "deus.bttf.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ChickenMixin",
+    "CowMixin",
+    "FAFishingRodMixin",
+    "SheepMixin",
+    "ZombieMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
