@@ -51,6 +51,7 @@ public class BTTFItems {
 	public static ItemFood rabbit_raw;
 	public static ItemFood rabbit_cooked;
 	public static ItemFood rotten_flesh;
+	public static ItemFood spider_eye;
 
 
 	public void Initialize() {
@@ -86,6 +87,10 @@ public class BTTFItems {
 
 		// Carne de Zombie
 		rotten_flesh = makeFood(config.newItemID(), "rotten_flesh", 4, 1, true, 64);
+
+		// Ojo de Araña
+		spider_eye = makeFood(config.newItemID(), "spider_eye", 0, 1, false, 64); // 2 de curación, 1 tick, apilable hasta 64
+
 
 		Debug.debugExecuteIt(() -> {
 

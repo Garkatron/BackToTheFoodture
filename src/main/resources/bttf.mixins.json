@@ -8,6 +8,7 @@
     "CowMixin",
     "FAFishingRodMixin",
     "SheepMixin",
+    "SpiderMixin",
     "ZombieMixin"
   ],
   "client": [

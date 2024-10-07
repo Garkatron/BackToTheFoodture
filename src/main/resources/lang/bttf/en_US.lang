@@ -1,14 +1,16 @@
-# Fish Items
+# Cod Items
 item.bttf.cod.name = Cod Fish
 item.bttf.cooked_cod.name = Cooked Cod Fish
+
 # Salmon Items
 item.bttf.salmon.name = Salmon Fish
 item.bttf.cooked_salmon.name = Cooked Salmon Fish
+
 # Goldfish Items
 item.bttf.gold_fish.name = Goldfish
 item.bttf.gold_fish.desc = Timmy: Are you Cosmo?
 item.bttf.cooked_gold_fish.name = Cooked Goldfish
-item.bttf.gold_fish.desc = Timmy: noooo cosmooo!
+item.bttf.cooked_gold_fish.desc = Timmy: noooo cosmooo!
 
 # Pufferfish Items
 item.bttf.pufferfish.name = Pufferfish
@@ -21,3 +23,24 @@ item.bttf.tropical_fish.desc = Nemo?!
 # Cooked Fish Soup
 item.bttf.cooked_fish_soup.name = Cooked Fish Soup
 item.bttf.cooked_fish_soup.desc = An awful soup
+
+# Mutton Items
+item.bttf.mutton_raw.name = Raw Mutton
+item.bttf.mutton_cooked.name = Cooked Mutton
+item.bttf.mutton_cooked.desc = Deliciously cooked sheep meat.
+
+# Chicken Items
+item.bttf.chicken_raw.name = Raw Chicken
+item.bttf.chicken_cooked.name = Cooked Chicken
+item.bttf.chicken_cooked.desc = Juicy and tender chicken.
+
+# Rabbit Items
+item.bttf.rabbit_raw.name = Raw Chicken
+item.bttf.rabbit_raw_cooked.name = Cooked Chicken
+item.bttf.rabbit_raw_cooked.desc = Deliciously cooked rabbit meat.
+
+
+# Beef Items
+item.bttf.beef_raw.name = Raw Beef
+item.bttf.beef_cooked.name = Cooked Beef
+item.bttf.beef_cooked.desc = A hearty steak.
