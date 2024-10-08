@@ -426,7 +426,7 @@ public class CustomBobberEntity extends EntityBobber {
 		return damage;
 	}
 
-	public static ItemFood getFishByProbability() {
+	public static Item getFishByProbability() {
 		int randomValue = (int) (Math.random() * 100); // Genera un número aleatorio entre 0 y 99
 
 		if (randomValue < 6) { // Pufferfish: 6%
@@ -434,17 +434,15 @@ public class CustomBobberEntity extends EntityBobber {
 		} else if (randomValue < 18) { // Salmon: 12% (6% + 12%)
 			return salmon;
 		} else if (randomValue < 24) { // Raw Fish: 6% (18% + 6%)
-			return (ItemFood) Item.foodFishRaw; // Asumimos que hay un Item.foodFishRaw
+			return Item.foodFishRaw; // Asumimos que hay un Item.foodFishRaw
 		} else if (randomValue < 48) { // Tropical Fish: 24% (24% + 24%)
 			return tropical_fish;
 		} else if (randomValue < 72) { // Cod: 24% (48% + 24%)
 			return cod_fish;
-		} else if (randomValue < 84) { // Cooked Cod: 12% (72% + 12%)
-			return cooked_cod;
-		} else if (randomValue < 94) { // Gold Fish: 10% (84% + 10%)
+		} else if (randomValue < 82) { // Gold Fish: 10% (72% + 10%)
 			return gold_fish;
-		} else { // Cooked Gold Fish: 6% (94% + 6%)
-			return cooked_gold_fish;
+		} else { // Cooked Gold Fish: 18% (82% + 18%)
+			return Item.ammoPebble;
 		}
 	}
 
