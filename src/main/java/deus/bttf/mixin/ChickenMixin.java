@@ -17,4 +17,5 @@ public class ChickenMixin {
 		EntityChicken entity = (EntityChicken) (Object) this;
 		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.chicken_raw.getDefaultStack(), 0, 1));
 	}
+
 }

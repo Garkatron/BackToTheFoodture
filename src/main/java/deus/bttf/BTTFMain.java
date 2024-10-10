@@ -42,10 +42,11 @@ public class BTTFMain implements ModInitializer, GameStartEntrypoint, RecipeEntr
 
 	@Override
 	public void onRecipesReady() {
-		RecipeInitializer.Initialize();
+		RecipeInitializer.InitRecipes();
 	}
 
 	@Override
 	public void initNamespaces() {
+		RecipeInitializer.InitNameSpaces();
 	}
 }

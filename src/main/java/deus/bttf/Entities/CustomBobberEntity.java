@@ -432,13 +432,13 @@ public class CustomBobberEntity extends EntityBobber {
 		if (randomValue < 6) { // Pufferfish: 6%
 			return pufferfish;
 		} else if (randomValue < 18) { // Salmon: 12% (6% + 12%)
-			return salmon;
+			return Item.foodFishRaw;
 		} else if (randomValue < 24) { // Raw Fish: 6% (18% + 6%)
-			return Item.foodFishRaw; // Asumimos que hay un Item.foodFishRaw
+			return salmon; // Asumimos que hay un Item.foodFishRaw
 		} else if (randomValue < 48) { // Tropical Fish: 24% (24% + 24%)
-			return tropical_fish;
-		} else if (randomValue < 72) { // Cod: 24% (48% + 24%)
 			return cod_fish;
+		} else if (randomValue < 72) { // Cod: 24% (48% + 24%)
+			return tropical_fish;
 		} else if (randomValue < 82) { // Gold Fish: 10% (72% + 10%)
 			return gold_fish;
 		} else { // Cooked Gold Fish: 18% (82% + 18%)

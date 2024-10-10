@@ -44,3 +44,9 @@ item.bttf.rabbit_raw_cooked.desc = Deliciously cooked rabbit meat.
 item.bttf.beef_raw.name = Raw Beef
 item.bttf.beef_cooked.name = Cooked Beef
 item.bttf.beef_cooked.desc = A hearty steak.
+
+item.bttf.rotten_flesh.name = Rotten flesh
+item.bttf.rotten_flesh.desc = Agh!
+
+item.bttf.rabbit_cooked.name = Cooked rabbit
+
