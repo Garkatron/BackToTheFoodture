@@ -1,6 +1,7 @@
 package deus.bttf.Recipes;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.data.registry.recipe.RecipeGroup;
 import net.minecraft.core.data.registry.recipe.RecipeNamespace;
@@ -10,6 +11,7 @@ import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCrafting;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.Items;
 import turniplabs.halplibe.helper.RecipeBuilder;
 
 import static deus.bttf.BTTFMain.MOD_ID;
@@ -22,8 +24,8 @@ public class RecipeInitializer extends RecipeRegistry {
 		// Inicia las recetas de la sopa de pescado cocido
 		RecipeBuilder.Shaped(MOD_ID)
 			.setShape(" F ", "KFJ", " W ")
-			.addInput('W', Item.bowl)
-			.addInput('F', Item.foodFishCooked)
+			.addInput('W', Items.BOWL)
+			.addInput('F', Items.FOOD_FISH_COOKED)
 			.addInput('K', cooked_salmon)
 			.addInput('J', cooked_cod) // Si no necesitas cocinados, simplemente elimina esta línea
 			.create("CookedFishSoupCrafting", cooked_fish_soup.getDefaultStack());
@@ -36,13 +38,13 @@ public class RecipeInitializer extends RecipeRegistry {
 		RecipeBuilder.Furnace(MOD_ID).setInput(rabbit_raw).create("CookedRabbitRecipe", rabbit_cooked.getDefaultStack());
 		RecipeBuilder.Furnace(MOD_ID).setInput(beef_raw).create("CookedBeefRecipe", beef_cooked.getDefaultStack());
 		RecipeBuilder.Furnace(MOD_ID).setInput(chicken_raw).create("CookedChickenRecipe", chicken_cooked.getDefaultStack());
-		RecipeBuilder.Furnace(MOD_ID).setInput(rotten_flesh).create("LeatherFromRottenFlesh", Item.leather.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(rotten_flesh).create("LeatherFromRottenFlesh", Items.LEATHER.getDefaultStack());
 	}
 
 	public static void InitNameSpaces() {
 		// Registro de grupos de recetas
 		final RecipeGroup<RecipeEntryCrafting<?, ?>> FURNACE = new RecipeGroup<>(
-			new RecipeSymbol(new ItemStack(Block.furnaceStoneActive))
+			new RecipeSymbol(new ItemStack(Blocks.FURNACE_STONE_ACTIVE))
 		);
 
 		// Registra el grupo de recetas de la mesa de trabajo

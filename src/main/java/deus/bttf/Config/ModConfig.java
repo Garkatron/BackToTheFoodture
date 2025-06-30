@@ -2,67 +2,47 @@ package deus.bttf.Config;
 
 import deus.bttf.DevTools.Debug.Debug;
 import turniplabs.halplibe.util.ConfigHandler;
+import turniplabs.halplibe.util.TomlConfigHandler;
+import turniplabs.halplibe.util.toml.Toml;
 
+import java.util.Locale;
 import java.util.Properties;
 
 import static deus.bttf.BTTFMain.MOD_ID;
-
 public class ModConfig {
 
 	private int BLOCK_ID;
 	private int ITEM_ID;
 
-	private static ConfigHandler config;
+	private static final TomlConfigHandler config;
+
+	static {
+		Toml toml = new Toml(MOD_ID.toUpperCase(Locale.ROOT));
+
+		toml.addCategory("IDs")
+			.addEntry("startBlockId", 14000)
+			.addEntry("startItemId", 15000);
+
+		config = new TomlConfigHandler(MOD_ID, toml);
+
+	}
+
+	public ModConfig() {
+		BLOCK_ID = config.getInt("IDs.startBlockId");
+		ITEM_ID = config.getInt("IDs.startItemId");
+	}
+
+	public TomlConfigHandler getConfig() {
+		return config;
+	}
 
 	public int newBlockID() {
-		Debug.println("FISHING ADDITIONS MOD CONFIG: PRE BLOCK ID: " + BLOCK_ID);
 		BLOCK_ID = BLOCK_ID + 1;
-
-		Debug.println("FISHING ADDITIONS MOD CONFIG: NEW BLOCK ID: " + BLOCK_ID);
 		return BLOCK_ID;
 	}
 
 	public int newItemID() {
-		Debug.println("FISHING ADDITIONS MOD CONFIG: PRE ITEM ID: " + ITEM_ID);
 		ITEM_ID = ITEM_ID + 1;
-		Debug.println("FISHING ADDITIONS MOD CONFIG: NEW ITEM ID: " + ITEM_ID);
 		return ITEM_ID;
-	}
-	public int getInt(String key){
-		return config.getInt(key);
-	}
-
-	public double getDouble(String key){
-		return Double.parseDouble(config.getString(key));
-	}
-
-	public String getString(String key){
-		return config.getString(key);
-	}
-
-	public ModConfig() {
-		Properties prop = new Properties();
-
-		int STARTING_BLOCK_ID = 10000;
-		int STARTING_ITEM_ID = 11000;
-
-		// IDs
-		prop.setProperty("block.starting.id", String.valueOf(STARTING_BLOCK_ID));
-		prop.setProperty("item.starting.id", String.valueOf(STARTING_ITEM_ID));
-
-		// Food Values
-		prop.setProperty("food.sized.healing_factor", "0.1");
-		prop.setProperty("food.sized.base_healing", String.valueOf(0));
-
-		// Block values
-		prop.setProperty("block.fishingNetBlock.needed_ticks_catch_fishes", String.valueOf(5000));
-
-
-		config = new ConfigHandler(MOD_ID, prop);
-
-		BLOCK_ID = config.getInt("block.starting.id");
-		ITEM_ID = config.getInt("item.starting.id");
-
-		config.updateConfig();
 	}
 }

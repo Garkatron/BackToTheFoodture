@@ -29,16 +29,19 @@
 		],
 		"recipesReady": [
 			"deus.bttf.BTTFMain"
+		],
+		"initModels": [
+			"deus.bttf.BTTFModels"
 		]
 	},
   "mixins": [
     "bttf.mixins.json"
   ],
 
-  "depends": {
-		"minecraft": "^7.2-beta",
+	"depends": {
+		"minecraft": "*",
 		"fabricloader": ">=0.15.5"
-  },
+	},
   "suggests": {
   }
 }

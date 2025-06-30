@@ -19,31 +19,28 @@ public class BTTFMain implements ModInitializer, GameStartEntrypoint, RecipeEntr
 	public static final String MOD_ID = "bttf";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+
 	@Override
 	public void onInitialize() {
-
 		isDebug = java.lang.management.ManagementFactory.getRuntimeMXBean().
 			getInputArguments().toString().contains("-agentlib:jdwp");
-		LOGGER.info("Fishing Additions initialized. Debug: "+ isDebug);
-
 
 		new BTTFItems().Initialize();
-
 	}
 
 	@Override
 	public void beforeGameStart() {
 
-
 	}
 
 	@Override
 	public void afterGameStart() {
+
 	}
 
 	@Override
 	public void onRecipesReady() {
-		RecipeInitializer.InitRecipes();
+		//RecipeInitializer.InitRecipes();
 	}
 
 	@Override

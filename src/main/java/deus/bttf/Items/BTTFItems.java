@@ -12,46 +12,43 @@ import turniplabs.halplibe.helper.ItemBuilder;
 
 import static deus.bttf.BTTFMain.MOD_ID;
 import static deus.bttf.BTTFMain.config;
-import static deus.bttf.DevTools.Utils.ItemUtils.makeFood;
 
 
 public class BTTFItems {
 
-	// Generic Builders
-
 	public static final ItemBuilder GenericItemBuilder = new ItemBuilder(MOD_ID);
 
 	// ### Pescado Pufferfish
-	public static ItemFood pufferfish;
+	public static Item pufferfish;
 
 	// ### Salmón
-	public static ItemFood salmon;
-	public static ItemFood cooked_salmon;
+	public static Item salmon;
+	public static Item cooked_salmon;
 
 	// ### Pez Tropical
-	public static ItemFood tropical_fish;
+	public static Item tropical_fish;
 
 	// ### Bacalao
-	public static ItemFood cod_fish;
-	public static ItemFood cooked_cod;
+	public static Item cod_fish;
+	public static Item cooked_cod;
 
 	// ### Pez Dorado (Goldfish)
-	public static ItemFood gold_fish;
-	public static ItemFood cooked_gold_fish;
+	public static Item gold_fish;
+	public static Item cooked_gold_fish;
 
 	// ### Sopa de Pescado Cocido
-	public static ItemFood cooked_fish_soup;
+	public static Item cooked_fish_soup;
 
-	public static ItemFood beef_raw;
-	public static ItemFood beef_cooked;
-	public static ItemFood mutton_raw;
-	public static ItemFood mutton_cooked;
-	public static ItemFood chicken_raw;
-	public static ItemFood chicken_cooked;
-	public static ItemFood rabbit_raw;
-	public static ItemFood rabbit_cooked;
-	public static ItemFood rotten_flesh;
-	public static ItemFood spider_eye;
+	public static Item beef_raw;
+	public static Item beef_cooked;
+	public static Item mutton_raw;
+	public static Item mutton_cooked;
+	public static Item chicken_raw;
+	public static Item chicken_cooked;
+	public static Item rabbit_raw;
+	public static Item rabbit_cooked;
+	public static Item rotten_flesh;
+	public static Item spider_eye;
 
 
 	public void Initialize() {
@@ -92,25 +89,36 @@ public class BTTFItems {
 		spider_eye = makeFood(config.newItemID(), "spider_eye", 0, 1, false, 64); // 2 de curación, 1 tick, apilable hasta 64
 
 
-		Debug.debugExecuteIt(() -> {
+		// Debug.debugExecuteIt(() -> {
 
-			Item creative_fishing_rod;
-			ItemBuilder generic_item_builder = new ItemBuilder(MOD_ID);
+//			Item creative_fishing_rod;
+//			ItemBuilder generic_item_builder = new ItemBuilder(MOD_ID);
+//
+//			ItemCreativeFishingRod t = new ItemCreativeFishingRod("bttf:item/ItemCreativeFishingRod", config.newItemID());
+//
+//			creative_fishing_rod = generic_item_builder.build(t);
+//			CreativeHelper.setPriority(creative_fishing_rod, 1000);
+//
+//			Debug.println("Creative: " + creative_fishing_rod.id);
 
-			ItemCreativeFishingRod t = new ItemCreativeFishingRod("creative_fishing_rod", config.newItemID());
-
-			creative_fishing_rod = generic_item_builder.build(t);
-			CreativeHelper.setPriority(creative_fishing_rod, 1000);
-
-			Debug.println("Creative: " + creative_fishing_rod.id);
-
-		});
+		// });
 
 		// Here are assigned the priorities of the items in the creative menu.
 		ItemUtils.assignPriorities(this.getClass());
 
 	}
-
+	public static ItemFood makeFood(int id, String name, int healAmount, int ticksPerHeal, boolean favouriteWolfMeat, int maxStackSize) {
+		return GenericItemBuilder
+			.build(new ItemFood(
+				name,
+				"bttf:item/"+name,
+				id,
+				healAmount,
+				ticksPerHeal,
+				favouriteWolfMeat,
+				maxStackSize
+			));
+	}
 
 }
 
