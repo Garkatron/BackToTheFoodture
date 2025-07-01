@@ -1,0 +1,59 @@
+# Cod Items
+item.bttf.cod.name = Bacalao
+item.bttf.cod.desc = Un pez resbaladizo, mejor cuando está cocido.
+item.bttf.cooked_cod.name = Bacalao Cocido
+item.bttf.cooked_cod.desc = Un pescado cocido simple y sabroso.
+
+# Salmon Items
+item.bttf.salmon.name = Salmón
+item.bttf.salmon.desc = Un pez fuerte y fresco.
+item.bttf.cooked_salmon.name = Salmón Cocido
+item.bttf.cooked_salmon.desc = Salmón rico y lleno de sabor.
+
+# Goldfish Items
+item.bttf.gold_fish.name = Pez Dorado
+item.bttf.gold_fish.desc = Timmy: ¿Eres tú Cosmo?
+item.bttf.cooked_gold_fish.name = Pez Dorado Cocido
+item.bttf.cooked_gold_fish.desc = Timmy: ¡noooo cosmooo!
+
+# Pufferfish Items
+item.bttf.pufferfish.name = Pez Globo
+item.bttf.pufferfish.desc = Veneno
+
+# Tropical Fish Items
+item.bttf.tropical_fish.name = Pez Tropical
+item.bttf.tropical_fish.desc = ¿¡Nemo!?
+
+# Cooked Fish Soup
+item.bttf.cooked_fish_soup.name = Sopa de Pescado Cocida
+item.bttf.cooked_fish_soup.desc = Una sopa horrible
+
+# Mutton Items
+item.bttf.mutton.name = Cordero Crudo
+item.bttf.mutton.desc = Carne fresca de oveja.
+item.bttf.cooked_mutton.name = Cordero Cocido
+item.bttf.cooked_mutton.desc = Carne de oveja cocinada deliciosamente.
+
+# Chicken Items
+item.bttf.chicken.name = Pollo Crudo
+item.bttf.chicken.desc = Carne de ave cruda lista para cocinar.
+item.bttf.cooked_chicken.name = Pollo Cocido
+item.bttf.cooked_chicken.desc = Pollo jugoso y tierno.
+
+# Rabbit Items
+item.bttf.rabbit.name = Conejo Crudo
+item.bttf.rabbit.desc = Un delicado trozo de carne de conejo.
+item.bttf.cooked_rabbit.name = Conejo Cocido
+item.bttf.cooked_rabbit.desc = Carne de conejo cocinada deliciosamente.
+
+# Beef Items
+item.bttf.beef.name = Carne de Res Cruda
+item.bttf.beef.desc = Un grueso trozo de carne de res cruda.
+item.bttf.cooked_beef.name = Carne de Res Cocida
+item.bttf.cooked_beef.desc = Un filete contundente.
+
+item.bttf.rotten_flesh.name = Carne Podrida
+item.bttf.rotten_flesh.desc = ¡Agh!
+
+item.bttf.spider_eye.name = Ojo de Araña
+item.bttf.spider_eye.desc = Asqueroso y pegajoso.

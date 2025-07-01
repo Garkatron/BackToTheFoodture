@@ -15,6 +15,6 @@ public class ZombieMixin {
 	@Inject(method = "<init>", at = @At("TAIL"), remap = false)
 	private void modifyInit(CallbackInfo ci) {
 		MobZombie entity = (MobZombie) (Object) this;
-		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.rotten_flesh.getDefaultStack(), 0, 2));
+		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.ROTTEN_FLESH.getDefaultStack(), 0, 2));
 	}
 }

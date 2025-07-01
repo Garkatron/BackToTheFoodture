@@ -15,7 +15,7 @@ public class SheepMixin {
 	@Inject(method = "<init>", at = @At("TAIL"), remap = false)
 	private void modifyInit(CallbackInfo ci) {
 		MobSheep entity = (MobSheep) (Object) this;
-		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.mutton_raw.getDefaultStack(), 0, 2));
+		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.FOOD_MUTTON.getDefaultStack(), 0, 2));
 	}
 
 

@@ -442,17 +442,17 @@ public class CustomBobberEntity extends EntityFishingBobber {
 		int randomValue = (int) (Math.random() * 100); // Genera un número aleatorio entre 0 y 99
 
 		if (randomValue < 6) { // Pufferfish: 6%
-			return pufferfish;
+			return FOOD_PUFFERFISH;
 		} else if (randomValue < 18) { // Salmon: 12% (6% + 12%)
 			return Items.FOOD_FISH_RAW;
 		} else if (randomValue < 24) { // Raw Fish: 6% (18% + 6%)
-			return salmon;
+			return FOOD_SALMON;
 		} else if (randomValue < 48) { // Tropical Fish: 24% (24% + 24%)
-			return cod_fish;
+			return FOOD_COD;
 		} else if (randomValue < 72) { // Cod: 24% (48% + 24%)
-			return tropical_fish;
+			return FOOD_TROPICAL_FISH;
 		} else if (randomValue < 82) { // Gold Fish: 10% (72% + 10%)
-			return gold_fish;
+			return FOOD_GOLD_FISH;
 		} else { // Cooked Gold Fish: 18% (82% + 18%)
 			return Items.AMMO_PEBBLE;
 		}

@@ -14,6 +14,6 @@ public class SpiderMixin {
 	@Inject(method = "<init>", at = @At("TAIL"), remap = false)
 	private void modifyInit(CallbackInfo ci) {
 		MobSpider entity = (MobSpider) (Object) this;
-		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.spider_eye.getDefaultStack(), 0, 1));
+		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.SPIDER_EYE.getDefaultStack(), 0, 1));
 	}
 }

@@ -1,13 +1,10 @@
 package deus.bttf.Items;
 
 
-import deus.bttf.DevTools.Debug.Debug;
 import deus.bttf.DevTools.Utils.ItemUtils;
-import deus.bttf.Items.Tools.ItemCreativeFishingRod;
 
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemFood;
-import turniplabs.halplibe.helper.CreativeHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
 
 import static deus.bttf.BTTFMain.MOD_ID;
@@ -19,74 +16,74 @@ public class BTTFItems {
 	public static final ItemBuilder GenericItemBuilder = new ItemBuilder(MOD_ID);
 
 	// ### Pescado Pufferfish
-	public static Item pufferfish;
+	public static Item FOOD_PUFFERFISH;
 
 	// ### Salmón
-	public static Item salmon;
-	public static Item cooked_salmon;
+	public static Item FOOD_SALMON;
+	public static Item FOOD_COOKED_SALMON;
 
 	// ### Pez Tropical
-	public static Item tropical_fish;
+	public static Item FOOD_TROPICAL_FISH;
 
 	// ### Bacalao
-	public static Item cod_fish;
-	public static Item cooked_cod;
+	public static Item FOOD_COD;
+	public static Item FOOD_COOKED_COD;
 
 	// ### Pez Dorado (Goldfish)
-	public static Item gold_fish;
-	public static Item cooked_gold_fish;
+	public static Item FOOD_GOLD_FISH;
+	public static Item FOOD_COOKED_GOLD_FISH;
 
 	// ### Sopa de Pescado Cocido
-	public static Item cooked_fish_soup;
+	public static Item FOOD_COOKED_FISH_SOUP;
 
-	public static Item beef_raw;
-	public static Item beef_cooked;
-	public static Item mutton_raw;
-	public static Item mutton_cooked;
-	public static Item chicken_raw;
-	public static Item chicken_cooked;
-	public static Item rabbit_raw;
-	public static Item rabbit_cooked;
-	public static Item rotten_flesh;
-	public static Item spider_eye;
+	public static Item FOOD_BEEF;
+	public static Item FOOD_COOKED_BEEF;
+	public static Item FOOD_MUTTON;
+	public static Item FOOD_COOKED_MUTTON;
+	public static Item FOOD_CHICKEN;
+	public static Item FOOD_COOKED_CHICKEN;
+	public static Item FOOD_RABBIT;
+	public static Item FOOD_COOKED_RABBIT;
+	public static Item ROTTEN_FLESH;
+	public static Item SPIDER_EYE;
 
 
 	public void Initialize() {
 
 		// ? ## Food
 
-		// Pescados
-		pufferfish = makeFood(config.newItemID(), "pufferfish", -1, 1, false, 1);
-		salmon = makeFood(config.newItemID(), "salmon", 2, 1, false, 16);
-		cooked_salmon = makeFood(config.newItemID(), "cooked_salmon", 6, 1, false, 16);
-		tropical_fish = makeFood(config.newItemID(), "tropical_fish", 1, 1, false, 16);
-		cod_fish = makeFood(config.newItemID(), "cod", 2, 1, false, 16);
-		cooked_cod = makeFood(config.newItemID(), "cooked_cod", 5, 1, false, 16);
-		gold_fish = makeFood(config.newItemID(), "gold_fish", 2, 1, false, 16);
-		cooked_gold_fish = makeFood(config.newItemID(), "cooked_gold_fish", 6, 1, false, 16);
-		cooked_fish_soup = makeFood(config.newItemID(), "cooked_fish_soup", 8, 1, false, 1);
+		// Fishes
+		FOOD_PUFFERFISH = GenericItemBuilder.build(new ItemHurt("pufferfish", "bttf:item/pufferfish", config.newItemID(), -1, 4, false, 1));
+		FOOD_SALMON = makeFood(config.newItemID(), "salmon", 2, 10, false, 16);
+		FOOD_COOKED_SALMON = makeFood(config.newItemID(), "cooked_salmon", 6, 10, false, 16);
+		FOOD_TROPICAL_FISH = makeFood(config.newItemID(), "tropical_fish", 1, 5, false, 16);
+		FOOD_COD = makeFood(config.newItemID(), "cod", 2, 10, false, 16);
+		FOOD_COOKED_COD = makeFood(config.newItemID(), "cooked_cod", 5, 8, false, 16);
+		FOOD_GOLD_FISH = makeFood(config.newItemID(), "gold_fish", 4, 2, false, 16);
+		FOOD_COOKED_GOLD_FISH = makeFood(config.newItemID(), "cooked_gold_fish", 8, 1, false, 16);
+		FOOD_COOKED_FISH_SOUP = makeFood(config.newItemID(), "cooked_fish_soup", 6, 15, false, 1);
 
-		// Carne de Vaca
-		beef_raw = makeFood(config.newItemID(), "beef_raw", 3, 1, true, 4);
-		beef_cooked = makeFood(config.newItemID(), "beef_cooked", 8, 1, true, 4);
+		// BEEF
+		FOOD_BEEF = makeFood(config.newItemID(), "beef", 4, 13, true, 4);
+		FOOD_COOKED_BEEF = makeFood(config.newItemID(), "cooked_beef", 8, 10, true, 4);
 
-		// Carne de Oveja
-		mutton_raw = makeFood(config.newItemID(), "mutton_raw", 2, 1, true, 6);
-		mutton_cooked = makeFood(config.newItemID(), "mutton_cooked", 6, 1, true, 6);
+		// MUTTON
+		FOOD_MUTTON = makeFood(config.newItemID(), "mutton", 3, 8, true, 6);
+		FOOD_COOKED_MUTTON = makeFood(config.newItemID(), "cooked_mutton", 7, 6, true, 6);
 
-		// Pollo
-		chicken_raw = makeFood(config.newItemID(), "chicken_raw", 2, 1, true, 3);
-		chicken_cooked = makeFood(config.newItemID(), "chicken_cooked", 6, 1, true, 3);
+		// CHICKEN
+		FOOD_CHICKEN = makeFood(config.newItemID(), "chicken", 4, 15, true, 3);
+		FOOD_COOKED_CHICKEN = makeFood(config.newItemID(), "cooked_chicken", 10, 14, true, 3);
 
-		// Conejo
-		rabbit_raw = makeFood(config.newItemID(), "rabbit_raw", 3, 1, true, 3);
-		rabbit_cooked = makeFood(config.newItemID(), "rabbit_cooked", 5, 1, true, 3);
+		// RABBIT
+		FOOD_RABBIT = makeFood(config.newItemID(), "rabbit", 3, 7, true, 3);
+		FOOD_COOKED_RABBIT = makeFood(config.newItemID(), "cooked_rabbit", 6, 5, true, 3);
 
-		// Carne de Zombie
-		rotten_flesh = makeFood(config.newItemID(), "rotten_flesh", 4, 1, true, 16);
+		// ROTTEN FLESH
+		ROTTEN_FLESH = makeFood(config.newItemID(), "rotten_flesh", 4, 12, true, 16);
 
-		// Ojo de Araña
-		spider_eye = makeFood(config.newItemID(), "spider_eye", 0, 1, false, 8);
+		// SPIDER EYE
+		SPIDER_EYE = GenericItemBuilder.build(new ItemHurt("spider_eye", "bttf:item/spider_eye", config.newItemID(), -1, 4, false, 8));
 
 		ItemUtils.assignPriorities(this.getClass());
 

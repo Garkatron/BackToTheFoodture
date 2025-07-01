@@ -16,6 +16,6 @@ public class CowMixin {
 	@Inject(method = "<init>", at = @At("TAIL"), remap = false)
 	private void modifyInit(CallbackInfo ci) {
 		MobCow entity = (MobCow) (Object) this;
-		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.beef_raw.getDefaultStack(), 0, 2));
+		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.FOOD_BEEF.getDefaultStack(), 0, 2));
 	}
 }

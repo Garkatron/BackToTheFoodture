@@ -1,16 +1,11 @@
 package deus.bttf.Recipes;
 
-import deus.bttf.Items.BTTFItems;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.Blocks;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.data.registry.recipe.RecipeGroup;
 import net.minecraft.core.data.registry.recipe.RecipeNamespace;
 import net.minecraft.core.data.registry.recipe.RecipeRegistry;
 import net.minecraft.core.data.registry.recipe.RecipeSymbol;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCrafting;
-import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import turniplabs.halplibe.helper.RecipeBuilder;
@@ -26,24 +21,24 @@ public class RecipeInitializer extends RecipeRegistry {
 			.setShape(" F ", "KFJ", " W ")
 			.addInput('W', Items.BOWL)
 			.addInput('F', Items.FOOD_FISH_COOKED)
-			.addInput('K', cooked_salmon)
-			.addInput('J', cooked_cod)
-			.create("bttf:recipe/fish_soup", cooked_fish_soup.getDefaultStack());
+			.addInput('K', FOOD_COOKED_SALMON)
+			.addInput('J', FOOD_COOKED_COD)
+			.create("bttf:recipe/fish_soup", FOOD_COOKED_FISH_SOUP.getDefaultStack());
 
-		RecipeBuilder.Furnace(MOD_ID).setInput(salmon).create("bttf:recipe/cooked_salmon", cooked_salmon.getDefaultStack());
-		RecipeBuilder.Furnace(MOD_ID).setInput(gold_fish).create("bttf:recipe/cooked_gold_fish", cooked_gold_fish.getDefaultStack());
-		RecipeBuilder.Furnace(MOD_ID).setInput(cod_fish).create("bttf:recipe/cooked_cod_fish", cooked_cod.getDefaultStack());
-		RecipeBuilder.Furnace(MOD_ID).setInput(mutton_raw).create("bttf:recipe/cooked_mutton", mutton_cooked.getDefaultStack());
-		RecipeBuilder.Furnace(MOD_ID).setInput(rabbit_raw).create("bttf:recipe/cooked_rabbit", rabbit_cooked.getDefaultStack());
-		RecipeBuilder.Furnace(MOD_ID).setInput(beef_raw).create("bttf:recipe/cooked_beef", beef_cooked.getDefaultStack());
-		RecipeBuilder.Furnace(MOD_ID).setInput(chicken_raw).create("bttf:recipe/cooked_chicken", chicken_cooked.getDefaultStack());
-		RecipeBuilder.Furnace(MOD_ID).setInput(rotten_flesh).create("bttf:recipe/leather_from_rotten_flesh", Items.LEATHER.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(FOOD_SALMON).create("bttf:recipe/cooked_salmon", FOOD_COOKED_SALMON.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(FOOD_GOLD_FISH).create("bttf:recipe/cooked_gold_fish", FOOD_COOKED_GOLD_FISH.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(FOOD_COD).create("bttf:recipe/cooked_cod_fish", FOOD_COOKED_COD.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(FOOD_MUTTON).create("bttf:recipe/cooked_mutton", FOOD_COOKED_MUTTON.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(FOOD_RABBIT).create("bttf:recipe/cooked_rabbit", FOOD_COOKED_RABBIT.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(FOOD_BEEF).create("bttf:recipe/cooked_beef", FOOD_COOKED_BEEF.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(FOOD_CHICKEN).create("bttf:recipe/cooked_chicken", FOOD_COOKED_CHICKEN.getDefaultStack());
+		RecipeBuilder.Furnace(MOD_ID).setInput(ROTTEN_FLESH).create("bttf:recipe/leather_from_rotten_flesh", Items.LEATHER.getDefaultStack());
 
 	}
 
 	public static void InitNameSpaces() {
 		final RecipeGroup<RecipeEntryCrafting<?, ?>> FURNACE = new RecipeGroup<>(
-			new RecipeSymbol(new ItemStack(gold_fish))
+			new RecipeSymbol(new ItemStack(FOOD_GOLD_FISH))
 		);
 
 		BTTF.register("bttf", FURNACE);
