@@ -21,7 +21,7 @@ public class ModConfig {
 
 		toml.addCategory("IDs")
 			.addEntry("startBlockId", 14000)
-			.addEntry("startItemId", 15000);
+			.addEntry("startItemId", 26000);
 
 		config = new TomlConfigHandler(MOD_ID, toml);
 
