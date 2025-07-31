@@ -11,7 +11,7 @@ import net.minecraft.core.item.Items;
 import turniplabs.halplibe.helper.RecipeBuilder;
 
 import static deus.bttf.BTTFMain.MOD_ID;
-import static deus.bttf.Items.BTTFItems.*; // Asegúrate de que los ítems están importados correctamente
+import static deus.bttf.Items.BTTFItems.*;
 
 public class RecipeInitializer extends RecipeRegistry {
 	public static final RecipeNamespace BTTF = new RecipeNamespace();
