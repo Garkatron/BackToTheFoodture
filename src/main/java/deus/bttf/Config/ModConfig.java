@@ -1,12 +1,9 @@
 package deus.bttf.Config;
 
-import deus.bttf.DevTools.Debug.Debug;
-import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.TomlConfigHandler;
 import turniplabs.halplibe.util.toml.Toml;
 
 import java.util.Locale;
-import java.util.Properties;
 
 import static deus.bttf.BTTFMain.MOD_ID;
 public class ModConfig {
@@ -14,7 +11,7 @@ public class ModConfig {
 	private int BLOCK_ID;
 	private int ITEM_ID;
 
-	private static final TomlConfigHandler config;
+	public static final TomlConfigHandler TOML_CONFIG;
 
 	static {
 		Toml toml = new Toml(MOD_ID.toUpperCase(Locale.ROOT));
@@ -23,17 +20,37 @@ public class ModConfig {
 			.addEntry("startBlockId", 14000)
 			.addEntry("startItemId", 26000);
 
-		config = new TomlConfigHandler(MOD_ID, toml);
+		toml.addCategory("Drops.chicken_meat")
+			.addEntry("min", 1)
+			.addEntry("max", 3);
+
+		toml.addCategory("Drops.cow_beef")
+			.addEntry("min", 1)
+			.addEntry("max", 4);
+
+		toml.addCategory("Drops.sheep_mutton")
+			.addEntry("min", 1)
+			.addEntry("max", 3);
+
+		toml.addCategory("Drops.spider_eye")
+			.addEntry("min", 0)
+			.addEntry("max", 1);
+
+		toml.addCategory("Drops.zombie_rotten_flesh")
+			.addEntry("min", 0)
+			.addEntry("max", 2);
+
+		TOML_CONFIG = new TomlConfigHandler(MOD_ID, toml);
 
 	}
 
 	public ModConfig() {
-		BLOCK_ID = config.getInt("IDs.startBlockId");
-		ITEM_ID = config.getInt("IDs.startItemId");
+		BLOCK_ID = TOML_CONFIG.getInt("IDs.startBlockId");
+		ITEM_ID = TOML_CONFIG.getInt("IDs.startItemId");
 	}
 
 	public TomlConfigHandler getConfig() {
-		return config;
+		return TOML_CONFIG;
 	}
 
 	public int newBlockID() {

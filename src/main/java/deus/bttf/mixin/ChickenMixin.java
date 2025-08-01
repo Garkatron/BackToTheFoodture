@@ -9,13 +9,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static deus.bttf.Config.ModConfig.TOML_CONFIG;
+
+
 @Mixin(MobChicken.class)
 public class ChickenMixin {
 	//dropFewItems
 	@Inject(method = "<init>", at = @At("TAIL"), remap = false)
 	private void modifyInit(CallbackInfo ci) {
 		MobChicken entity = (MobChicken) (Object) this;
-		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.FOOD_CHICKEN.getDefaultStack(), 0, 1));
+		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.FOOD_CHICKEN.getDefaultStack(), TOML_CONFIG.getInt("Drops.chicken_meat.min"), TOML_CONFIG.getInt("Drops.chicken_meat.max")));
 	}
 
 }

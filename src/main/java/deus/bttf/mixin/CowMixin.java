@@ -9,6 +9,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static deus.bttf.Config.ModConfig.TOML_CONFIG;
+
 
 @Mixin(MobCow.class)
 public class CowMixin {
@@ -16,6 +18,6 @@ public class CowMixin {
 	@Inject(method = "<init>", at = @At("TAIL"), remap = false)
 	private void modifyInit(CallbackInfo ci) {
 		MobCow entity = (MobCow) (Object) this;
-		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.FOOD_BEEF.getDefaultStack(), 0, 2));
+		entity.mobDrops.add(new WeightedRandomLootObject(BTTFItems.FOOD_BEEF.getDefaultStack(), TOML_CONFIG.getInt("Drops.cow_beef.min"), TOML_CONFIG.getInt("Drops.cow_beef.max")));
 	}
 }
