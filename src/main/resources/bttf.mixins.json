@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "deus.bttf.mixin",
   "compatibilityLevel": "JAVA_8",
+  "plugin": "deus.bttf.mixin.plugin.BttfMixinConfigPlugin",
   "mixins": [
     "ChickenMixin",
     "CowMixin",
