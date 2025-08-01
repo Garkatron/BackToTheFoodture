@@ -85,7 +85,6 @@ public class BTTFItems {
 		// SPIDER EYE
 		SPIDER_EYE = GenericItemBuilder.build(new ItemHurt("spider_eye", "bttf:item/spider_eye", config.newItemID(), -1, 4, false, 8));
 
-		ItemUtils.assignPriorities(this.getClass());
 
 	}
 	public static ItemFood makeFood(int id, String name, int healAmount, int ticksPerHeal, boolean favouriteWolfMeat, int maxStackSize) {

@@ -22,8 +22,6 @@ public class BTTFMain implements ModInitializer, GameStartEntrypoint, RecipeEntr
 
 	@Override
 	public void onInitialize() {
-		isDebug = java.lang.management.ManagementFactory.getRuntimeMXBean().
-			getInputArguments().toString().contains("-agentlib:jdwp");
 
 		new BTTFItems().Initialize();
 	}
